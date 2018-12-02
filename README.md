@@ -12,8 +12,8 @@
  - #chatbot_aip : 各 api 接口，主要是將 menu 及 user 的資訊做業務邏輯處理到資料庫.
 
 #### step 0 : 更改基本資料
- - #將所有資料 Cinghong 改成自己的名稱 
-    ex: mv Cinghong_Dev/    XXXX_Dev 
+ - #將所有資料 Harry 改成自己的名稱 
+    ex: mv Harry_Dev/    XXXX_Dev 
 
 #### step 1 : 將環境up
 ```sh
@@ -26,14 +26,14 @@ $ bash get_ngrok_url.sh  #抓取ngrok url
  - 將 Channel secret 、 Channel access token 、Your user ID 、 ngrok的 url 填寫到 secret_key 檔案中
 #### step 3 : 菜單相關
  - 建立 menu (菜單的圖檔可以自行設計) 
- - 執行 Cinghongli_Line/code/menu_id.ipynb      到第3個 cell 時，將產生的 rich-menuid               貼到secret_key 檔案中的相對應位置 
- - 再繼續執行Cinghong_Line/code/menu_id.ipynb 第4、5 cell 
+ - 執行 Harry_Line/code/menu_id.ipynb      到第3個 cell 時，將產生的 rich-menuid               貼到secret_key 檔案中的相對應位置 
+ - 再繼續執行Harry_Line/code/menu_id.ipynb 第4、5 cell 
  #### step 4 : 
  - 開啟 API Server(ip:8880) 
- - 執行 Cinghong_Dev/code/code.ipynb -->Run   All
+ - 執行 Harry_Dev/code/code.ipynb -->Run   All
  #### step 5 : 
  - 開啟 Line Server 
- - 執行 Cinghong_Line/code/app.ipynb -->     Run All
+ - 執行 Harry_Line/code/app.ipynb -->     Run All
  
 
 
