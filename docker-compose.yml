@@ -31,7 +31,7 @@ services:
       - db
     volumes:
       - ./Harry_Dev/code:/home/jovyan/work/
-    command: python /home/jovyan/work/code.ipynb
+#    command: python /home/jovyan/work/code.ipynb
     command: start-notebook.sh --NotebookApp.token=''
 
   redis:
@@ -57,7 +57,7 @@ services:
       - "8000:8000"
       - "5000:5000"
     command: start-notebook.sh --NotebookApp.token=''
-    command: python /home/jovyan/work/app.ipynb
+#    command: python /home/jovyan/work/app.ipynb
     volumes:
       - ./Harry_Line/code:/home/jovyan/work
 
@@ -70,6 +70,7 @@ services:
       - jupyter-tutorial
     ports:
       - "4040:4040"
+    command: ngrok authtoken 7HX2ruoZJbDahexjZp6AD_5WG8ZcYdPWY6gEpoYVcwN
     command: ngrok http chatbot_line:5000
 
 
