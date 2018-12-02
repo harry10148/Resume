@@ -31,7 +31,7 @@ services:
       - db
     volumes:
       - ./Harry_Dev/code:/home/jovyan/work/
-#    command: python /home/jovyan/work/code.py
+    command: python /home/jovyan/work/code.ipynb
     command: start-notebook.sh --NotebookApp.token=''
 
   redis:
@@ -52,13 +52,12 @@ services:
     depends_on: 
       - api
       - redis
-#      - ngrok-external-dns
     ports:
       - "8888:8888"
       - "8000:8000"
       - "5000:5000"
     command: start-notebook.sh --NotebookApp.token=''
-#    command: python /home/jovyan/work/test.py
+    command: python /home/jovyan/work/app.ipynb
     volumes:
       - ./Harry_Line/code:/home/jovyan/work
 
