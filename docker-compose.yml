@@ -23,7 +23,7 @@ services:
     environment:
       - GRANT_SUDO=yes
     ports:
-      - "8880:8888"
+#      - "8880:8888"
       - "5001:5000"
     depends_on:
       - db
@@ -31,9 +31,8 @@ services:
       - db
     volumes:
       - ./Harry_Dev/code:/home/jovyan/work/
-#    command: python /home/jovyan/work/code.ipynb
     command: start-notebook.sh --NotebookApp.token=''
-
+    command: python /home/jovyan/work/code.py
   redis:
     build: 
       context: ./Harry_Line/dockerfile
@@ -53,24 +52,24 @@ services:
       - api
       - redis
     ports:
-      - "8888:8888"
-      - "8000:8000"
+ #     - "8888:8888"
+ #     - "8000:8000"
       - "5000:5000"
     command: start-notebook.sh --NotebookApp.token=''
-#    command: python /home/jovyan/work/app.ipynb
+    command: python /home/jovyan/work/app.py
     volumes:
       - ./Harry_Line/code:/home/jovyan/work
 
-  ngrok-external-dns:
-    build: 
-      context: ./Harry_Line/dockerfile
-      dockerfile: dockerfile-ngrok
-    container_name: chatbot_ngrok
-    depends_on: 
-      - jupyter-tutorial
-    ports:
-      - "4040:4040"
-    command: ngrok authtoken 7HX2ruoZJbDahexjZp6AD_5WG8ZcYdPWY6gEpoYVcwN
-    command: ngrok http chatbot_line:5000
+#  ngrok-external-dns:
+#    build: 
+#      context: ./Harry_Line/dockerfile
+#      dockerfile: dockerfile-ngrok
+#    container_name: chatbot_ngrok
+#    depends_on: 
+#      - jupyter-tutorial
+#    ports:
+#      - "4040:4040"
+#    command: ngrok authtoken 7HX2ruoZJbDahexjZp6AD_5WG8ZcYdPWY6gEpoYVcwN
+#    command: ngrok http chatbot_line:5000
 
 
